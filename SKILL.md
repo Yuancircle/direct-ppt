@@ -1,6 +1,6 @@
 ---
 name: direct-ppt
-description: Blueprint-first PPTX skill for any PowerPoint page. Use when the user wants to turn a rough brief into a confirmed blueprint, then directly generate a polished editable PPTX with pptxgenjs. Best for any PPT page that should be designed once and delivered straight as PPTX.
+description: Blueprint-first PPTX skill for any PowerPoint page. Use when the user wants to turn a rough brief into a confirmed blueprint, then directly generate a polished editable PPTX with bundled runtime support. Best for any PPT page that should be designed once and delivered straight as PPTX.
 ---
 
 # Direct PPT
@@ -18,6 +18,22 @@ Use this skill when the user wants **any PPT page** to be delivered directly as 
 - This is the **single entry skill for all PPT creation tasks**.
 - Use it for cover pages, single pages, and multi-page batches.
 - For multi-page work, still keep **one blueprint per page** and render pages separately, then package the outputs.
+
+## Bundled runtime
+- The skill includes an offline-friendly runtime in `assets/runtime/`.
+- Prefer the bundled runtime when the environment cannot install npm packages.
+- Runtime files:
+  - `assets/runtime/pptxgen.bundle.js`
+  - `assets/runtime/jszip.min.js`
+- Loader helper:
+  - `scripts/pptx-runtime.js`
+
+## Quick install
+1. Copy the whole `direct-ppt/` skill folder into the target agent workspace.
+2. Keep `assets/runtime/` next to `SKILL.md`.
+3. If the host already has `pptxgenjs`, the skill can use it directly.
+4. If not, the bundled runtime will fall back to the vendored files automatically.
+5. Start with the brief, lock the blueprint, then render the approved slide to `.pptx`.
 
 ## Workflow
 1. Collect the minimum brief: page title, goal, audience, required blocks, forbidden directions, style.

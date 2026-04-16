@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""
-Placeholder helper for Direct PPT workflows.
+"""Direct PPT skill helper.
 
-This skill relies on blueprint-driven rendering scripts generated per request.
-Keep this file as a lightweight anchor for future automation.
+This file stays lightweight on purpose. The actual runtime loading logic
+lives in scripts/pptx-runtime.js so the skill can fall back to bundled
+offline dependencies when the host does not have pptxgenjs installed.
 """
+
+from pathlib import Path
 
 
 def main():
+    runtime_dir = Path(__file__).resolve().parent / "runtime"
     print("direct-ppt skill scaffold is ready")
-    print("Blueprint-driven PPTX generation should be implemented per request.")
+    print(f"Bundled runtime directory: {runtime_dir}")
+    print("Use scripts/pptx-runtime.js to load pptxgenjs with offline fallback.")
 
 
 if __name__ == "__main__":
