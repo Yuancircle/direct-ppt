@@ -1,24 +1,31 @@
 ---
-name: blueprint-pptx
-description: Blueprint-first single-slide PPTX skill. Use when the user wants to turn a rough brief into a confirmed page blueprint, then render a polished editable PPTX with pptxgenjs. Best for one-page report slides, timelines, action plans, matrices, and other tightly controlled pages.
+name: direct-ppt
+description: Blueprint-first PPTX skill for any PowerPoint page. Use when the user wants to turn a rough brief into a confirmed blueprint, then directly generate a polished editable PPTX with pptxgenjs. Best for any PPT page that should be designed once and delivered straight as PPTX.
 ---
 
-# Blueprint PPTX
+# Direct PPT
 
-Use this skill when the user wants a **single-slide or tightly controlled one-page PPTX** and wants a blueprint reviewed before rendering.
+Use this skill when the user wants **any PPT page** to be delivered directly as editable `.pptx` after a blueprint review.
 
 ## When to use
-- “把这一页做成 PPTX”
-- “先出蓝图，确认后再出成品”
-- “做领导汇报页 / 行动计划页 / 时间线页”
-- “把表格页、矩阵页、流程页做成可编辑 PPTX”
+- “这个 PPT 直接出成品”
+- “先出蓝图，确认后直出 PPTX”
+- “做任何汇报页、封面页、目录页、路线图页、时间线页”
+- “把一页 PPT 按蓝图直接生成，可编辑、可交付”
+- “做 PPT 任务就用这个 skill，不区分单页/多页”
+
+## Scope
+- This is the **single entry skill for all PPT creation tasks**.
+- Use it for cover pages, single pages, and multi-page batches.
+- For multi-page work, still keep **one blueprint per page** and render pages separately, then package the outputs.
 
 ## Workflow
 1. Collect the minimum brief: page title, goal, audience, required blocks, forbidden directions, style.
 2. Write a short markdown blueprint.
 3. Wait for user approval.
-4. Render the slide with `pptxgenjs`.
-5. Check overlap, clipping, and unexpected wraps before delivering.
+4. Render the approved blueprint with `pptxgenjs`.
+5. Check overlap, clipping, unexpected wraps, and tiny/pale text before delivering.
+6. If the page is part of a batch, repeat the same process page by page before merging/package output.
 
 ## Blueprint rules
 - Main story first.
@@ -26,13 +33,16 @@ Use this skill when the user wants a **single-slide or tightly controlled one-pa
 - For table-like pages, budget column widths explicitly and prefer real tables.
 - Avoid tiny nested frames and merged cells unless necessary.
 - If a page is fragile, simplify the layout before shrinking text.
+- For cover pages, keep only the title and minimal supporting elements.
+- For process pages, prefer clear blocks or step flows rather than dense micro-cards.
+- For timeline/action-plan pages, use a real table and line breaks inside cells only when necessary.
 
 ## Output rules
 - Final deliverable is PPTX.
-- Treat HTML as optional preview only, never as the default final artifact.
+- HTML is optional preview only, never the default final artifact.
 - Prefer direct PPTX generation for all approved pages.
 - If the user asks for a batch, make one blueprint per page and render each page separately.
 
 ## Notes
-- This skill used to be named `single-page-pptx`.
-- The workflow is blueprint-first, approval-gated, and PPTX-only.
+- The point is speed, consistency, and editable PPTX output.
+- This workflow is blueprint-first, approval-gated, and PPTX-only.
