@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """
-Placeholder helper for single-page PPTX workflows.
+Placeholder helper for Blueprint PPTX workflows.
 
-This skill currently relies on LLM-generated rendering scripts rather than a fixed
-compiler. Keep this file as a lightweight anchor for future automation.
+This skill relies on blueprint-driven rendering scripts generated per request.
+Keep this file as a lightweight anchor for future automation.
 """
-
-from pathlib import Path
 
 
 def main():
-    print("single-page-pptx skill scaffold is ready")
+    print("blueprint-pptx skill scaffold is ready")
     print("Blueprint-driven PPTX generation should be implemented per request.")
 
 

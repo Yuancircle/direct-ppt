@@ -1,10 +1,10 @@
-# single-page-pptx
+# blueprint-pptx
 
-This skill is for one-slide PPTX creation with a human-in-the-loop flow:
+Blueprint-first one-slide PPTX workflow:
 
-- discuss requirements
-- draft blueprint
+- discuss the brief
+- draft a page blueprint
 - wait for approval
-- generate PPTX directly from the approved blueprint
+- generate editable PPTX directly from the approved blueprint
 
-It is intentionally lightweight and blueprint-first. HTML is optional and not the final output.
+Use this skill for single-page report slides, timelines, action plans, matrices, and other tightly controlled pages.

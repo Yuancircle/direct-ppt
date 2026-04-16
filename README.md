@@ -1,35 +1,37 @@
-# single-page-pptx
+# Blueprint PPTX
 
-一个用于**单页 PPTX 直出**的 Agent Skill。
+Blueprint-first one-page PPTX skill for turning a rough brief into a polished, editable slide deck.
 
-## 它能做什么
+## What it does
 
-这个 skill 适合这样的流程：
+- Discuss the page requirements first
+- Draft a confirmed page blueprint
+- Render the approved blueprint directly into `.pptx`
+- Keep the final output editable and projection-friendly
 
-1. 先和用户讨论需求
-2. 由助手输出一版页面蓝图
-3. 用户确认蓝图
-4. 再按蓝图直接生成 `.pptx`
+## Best for
 
-## 适用场景
+- Leadership report slides
+- Action plans and roadmaps
+- Timelines and process pages
+- Tables, matrices, and other tightly controlled single-page layouts
 
-- 单页领导汇报页
-- 行动计划页 / 路线图页
-- 信息结构清晰、但版式要求比较严的 PPT 单页
+## Workflow
 
-## 核心特点
+1. Discuss the brief
+2. Lock the blueprint
+3. Approve the page
+4. Generate the PPTX with `pptxgenjs`
 
-- **蓝图优先**：先确认结构，再动手出 PPT
-- **PPTX 直出**：不用把 HTML 当最终产物
-- **表格页优先真表格**：能用 `pptxgenjs` 的 table 就尽量不用假块拼
-- **少用合并单元格**：降低 PPT 自动修复和版式漂移风险
+## Design principles
 
-## 输出风格
+- Blueprint first, rendering second
+- PPTX is the final output
+- Use real tables when the page is table-like
+- Avoid heavy merges and fragile nested frames
+- Keep the page clear, stable, and easy to present
 
-- 偏成熟 PPT 风格
-- 适合投屏阅读
-- 字体、层级、留白、颜色都以“清楚、稳重、能汇报”为目标
+## Notes
 
-## 当前状态
-
-这是一个轻量 skill 骨架，后续可继续扩展为更完整的蓝图驱动 PPTX 制作流程。
+- Formerly `single-page-pptx`
+- HTML is only for temporary preview, not the final deliverable
